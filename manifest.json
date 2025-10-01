@@ -1,0 +1,103 @@
+{
+  "name": "TaskPilot - Routine Planner",
+  "short_name": "TaskPilot",
+  "description": "Plan your week with smart timers and rewards",
+  "start_url": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "tabbed"],
+  "background_color": "#667eea",
+  "theme_color": "#6366f1",
+  "orientation": "portrait",
+  "scope": "/",
+  "categories": ["productivity", "utilities"],
+  "lang": "en-US",
+  
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+
+  "shortcuts": [
+    {
+      "name": "Today's Tasks",
+      "short_name": "Today",
+      "description": "View today's scheduled tasks",
+      "url": "/?view=today",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Add New Task",
+      "short_name": "Add Task",
+      "description": "Quickly add a new task",
+      "url": "/?view=add",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+
+  "widgets": [
+    {
+      "name": "Today's Tasks",
+      "tag": "today-tasks",
+      "template": "grid",
+      "ms_ac_template": "today-widget",
+      "description": "See your today's tasks at a glance",
+      "screenshots": [
+        {
+          "src": "icons/widget-preview.png",
+          "sizes": "400x200",
+          "type": "image/png",
+          "label": "Today's Tasks Widget Preview"
+        }
+      ],
+      "data": {
+        "tasks": "/api/widget/today"
+      },
+      "config": {
+        "size": "large"
+      }
+    },
+    {
+      "name": "Weekly Progress",
+      "tag": "weekly-progress",
+      "template": "value",
+      "ms_ac_template": "progress-widget",
+      "description": "Track your weekly completion rate",
+      "screenshots": [
+        {
+          "src": "icons/widget-progress.png",
+          "sizes": "400x200",
+          "type": "image/png",
+          "label": "Weekly Progress Widget"
+        }
+      ],
+      "data": {
+        "progress": "/api/widget/progress"
+      },
+      "config": {
+        "size": "small"
+      }
+    }
+  ]
+}
